@@ -13,5 +13,5 @@ int main() {
   *matrix_get(&m, 0, 1) = 3;
   matrix_for_each(&m, &print);
   matrix_display(&m);
-  return 0;
+  return EXIT_SUCCESS;
 }

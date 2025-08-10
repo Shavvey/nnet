@@ -60,15 +60,23 @@ void matrix_for_each(Matrix *m, void (*routine)(value *val)) {
 }
 
 void matrix_display(Matrix *m) {
+  const uint FLOAT_SIZE = 5;
   StringBuilder sb = {0};
   alist_make(&sb);
-  alist_append(&sb, '[');
   // build sb
+  char *vstr = (char*)malloc(FLOAT_SIZE * sizeof(char));
   for (uint r = 0; r < m->nrows; r++) {
+    alist_append(&sb, '['); // opening brackets
     for (uint c = 0; c < m->ncols; c++) {
       value v = *matrix_get(m, r, c); 
+      snprintf(vstr, FLOAT_SIZE, "%.2f", v);
+      alist_append_many(&sb, vstr, FLOAT_SIZE);
+      if (c < m->ncols - 1) alist_append_many(&sb, ", ", 2);
     }
+    alist_append(&sb, ']'); // closing brackets
+    alist_append(&sb, '\n');
   }
+  free(vstr);
   // print sb
   for (size_t i = 0; i < sb.size; i++) {
     printf("%c", sb.items[i]);

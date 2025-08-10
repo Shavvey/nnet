@@ -31,7 +31,14 @@ do {                                                                     \
   (al)->items[(al)->size++] = (item);                                        \
 }while(0)
 
-#define _alist_append_many(al, ...) do {}
+// NOTE: maybe make a reserve funtion to allocate space for the append?
+#define alist_append_many(al, new_items, size) do { \
+  size_t i = 0;                                      \
+  while(i < (size)) {                                \
+     alist_append((al), (new_items)[i]);             \
+     i++;                                            \
+  }                                                  \
+}while(0)
 
 #define alist_free(al) do {   \
  (al)->size = 0;              \
