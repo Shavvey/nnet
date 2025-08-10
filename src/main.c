@@ -8,6 +8,8 @@ void print(value *val) {
 
 int main() {
   Matrix m = make_matrix(3, 3);
+  Matrix m1 = make_matrix(3, 3);
+  matrix_mult(&m, &m1);
   *matrix_get(&m, 0, 1) = 3;
   matrix_for_each(&m, &print);
   matrix_display(&m);

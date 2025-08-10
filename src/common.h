@@ -31,6 +31,8 @@ do {                                                                     \
   (al)->items[(al)->size++] = (item);                                        \
 }while(0)
 
+#define _alist_append_many(al, ...) do {}
+
 #define alist_free(al) do {   \
  (al)->size = 0;              \
  (al)->capacity = 0;          \

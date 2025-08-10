@@ -16,4 +16,5 @@ void delete_matrix(Matrix *m);
 void matrix_for_each(Matrix *m, void (*routine)(value *val));
 value* matrix_get(Matrix *m, uint i, uint j);
 void matrix_display(Matrix *m);
+Matrix matrix_mult(Matrix *lhs, Matrix *rhs);
 #endif  // INCLUDE_SRC_MATRIX_H_

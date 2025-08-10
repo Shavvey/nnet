@@ -24,9 +24,9 @@ static bool check_mdims(Matrix *lhs, Matrix *rhs) {
 
 Matrix matrix_mult(Matrix *lhs, Matrix *rhs) {
   if (!check_mdims(lhs, rhs)) {
-    eprintf("Could not multiply matrix!");
+    eprintf("Could not multiply matrix!\n");
   }
-  assert(lhs->ncols == rhs->nrows && "Middle dimensions not equal!");
+  assert(lhs->ncols == rhs->nrows && "Middle dimensions not equal!\n");
   uint lnrows = lhs->nrows;
   uint rncols = rhs->ncols;
   uint mdim = lhs->ncols;
@@ -65,7 +65,7 @@ void matrix_display(Matrix *m) {
   alist_append(&sb, '[');
   // build sb
   for (uint r = 0; r < m->nrows; r++) {
-    for (uint c = 0; r < m->ncols; c++) {
+    for (uint c = 0; c < m->ncols; c++) {
       value v = *matrix_get(m, r, c); 
     }
   }
