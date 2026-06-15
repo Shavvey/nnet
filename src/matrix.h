@@ -1,6 +1,5 @@
 #ifndef INCLUDE_SRC_MATRIX_H_
 #define INCLUDE_SRC_MATRIX_H_
-#include <stdlib.h>
 #include <stdint.h>
 // NOTE: maybe a better name would be number?
 typedef float value;

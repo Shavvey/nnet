@@ -20,7 +20,7 @@ static bool check_mdims(Matrix *lhs, Matrix *rhs) {
   return (lncols == rnrows);
 }
 
-// NOTE: mabye implement Strassen Matrix multipliation
+// NOTE: maybe implement Strassen Matrix multipliation
 Matrix matrix_mult(Matrix *lhs, Matrix *rhs) {
   if (!check_mdims(lhs, rhs)) {
     eprintf("Could not multiply matrix!\n");

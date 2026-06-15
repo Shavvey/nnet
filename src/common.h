@@ -32,7 +32,7 @@ do {                                                                     \
 }while(0)
 
 // NOTE: maybe make a reserve funtion to allocate space for the append?
-#define alist_append_many(al, new_items, size) do { \
+#define alist_append_many(al, new_items, size) do {  \
   size_t i = 0;                                      \
   while(i < (size)) {                                \
      alist_append((al), (new_items)[i]);             \
@@ -47,7 +47,7 @@ do {                                                                     \
 }while(0)
 
 // DECLARATIONS
-typedef struct _StringBuilder {
+typedef struct {
   char *items;
   size_t capacity;
   size_t size;
